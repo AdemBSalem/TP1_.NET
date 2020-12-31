@@ -1,0 +1,40 @@
+﻿
+@model  TP1_.NET.Models.Movie
+
+<h2>Ajouter</h2>
+
+@using (Html.BeginForm("AjouterBase", "MoviesM"))
+{
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary()
+        @Html.LabelFor(model => model.Title)
+        @Html.EditorFor(model => model.Title)
+        @Html.ValidationMessageFor(model => model.Title)
+        <br />
+
+        @Html.LabelFor(model => model.ReleaseDate)
+        @Html.EditorFor(model => model.ReleaseDate)
+        @Html.ValidationMessageFor(model => model.ReleaseDate)
+        <br />
+
+        @Html.LabelFor(model => model.Genre)
+        @Html.EditorFor(model => model.Genre)
+        @Html.ValidationMessageFor(model => model.Genre)
+        <br />
+
+        @Html.LabelFor(model => model.Price)
+        @Html.EditorFor(model => model.Price)
+        @Html.ValidationMessageFor(model => model.Genre)
+        <br />
+        <input type="submit" value="Ajouter" />
+    </div>
+}
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+

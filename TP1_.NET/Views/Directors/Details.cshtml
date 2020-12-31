@@ -1,0 +1,53 @@
+﻿@model TP1_.NET.Models.Director
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Director</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+    </dl>
+</div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Release Date</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Movies)
+        { 
+            <tr>@Html.DisplayFor(x=>item.Title)</tr>
+            <tr>@Html.DisplayFor(x=>item.Genre)</tr>
+            <tr>@Html.DisplayFor(x=>item.ReleaseDate)</tr>
+            <tr>@Html.DisplayFor(x=>item.Rating)</tr>
+        }
+        </tbody>
+</table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DirectorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
